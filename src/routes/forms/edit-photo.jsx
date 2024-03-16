@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditPhoto = () => {
@@ -11,12 +10,12 @@ const EditPhoto = () => {
   const { id } = useParams();
 
   const editPhoto = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const datas = {
       imageUrl,
       captions,
-      updatedAt: new Date().toLocaleString()
-    }
+      updatedAt: new Date().toLocaleString(),
+    };
     await fetch(`https://gallery-app-server.vercel.app/photos/${id}`, {
       method: "PATCH", // HTTP method menggunakan PUT
       body: JSON.stringify(datas), // data yang dikirim
@@ -27,20 +26,20 @@ const EditPhoto = () => {
     })
       .then((res) => res.json())
       .then((json) => {
-        navigate('/photos')
-        setLoading(false)
+        navigate("/photos");
+        setLoading(false);
       });
-  }
-  
+  };
+
   useEffect(() => {
     setLoading(true);
     // mengset fetching
     fetch(`https://gallery-app-server.vercel.app/photos/${id}`)
-    .then((res) => res.json())
+      .then((res) => res.json())
       .then((json) => {
-        setImageUrl(json.imageUrl)
-        setCaptions(json.captions)
-        setLoading(false)
+        setImageUrl(json.imageUrl);
+        setCaptions(json.captions);
+        setLoading(false);
       })
       .catch((error) => {
         // set error
@@ -49,7 +48,6 @@ const EditPhoto = () => {
         setLoading(false);
       });
   }, [id]);
-
 
   if (error) return <div>Error!</div>;
 
@@ -81,7 +79,12 @@ const EditPhoto = () => {
                 onChange={(e) => setCaptions(e.target.value)}
               />
             </label>
-            <input className="text-white w-3/5 mx-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 lg:w-full lg:mx-auto" type="submit" value="Submit" data-testid="submit" />
+            <input
+              className="text-white w-3/5 mx-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 lg:w-full lg:mx-auto"
+              type="submit"
+              value="Submit"
+              data-testid="submit"
+            />
           </form>
         </div>
       )}

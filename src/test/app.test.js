@@ -1,14 +1,14 @@
-import React from "react";
 import {
-  render,
-  waitFor,
-  screen,
   fireEvent,
+  render,
+  screen,
+  waitFor,
   waitForElementToBeRemoved,
 } from "@testing-library/react";
-import App from "./App";
-import { MemoryRouter } from "react-router-dom";
+import React from "react";
 import { act } from "react-dom/test-utils";
+import { MemoryRouter } from "react-router-dom";
+import App from "./../app";
 
 describe("/photos", () => {
   beforeEach(() => {});
@@ -20,7 +20,7 @@ describe("/photos", () => {
     render(
       <MemoryRouter initialEntries={["/photos"]}>
         <App />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     await waitFor(() => screen.findByText("Siapa yang Tahu???"));
     expect(fetch).lastCalledWith("http://localhost:3001/photos");
@@ -36,7 +36,7 @@ describe("/photos", () => {
     render(
       <MemoryRouter initialEntries={["/photos"]}>
         <App />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     await waitFor(() => screen.findByText("Siapa yang Tahu???"));
     const select = screen.getByTestId("sort");
@@ -59,21 +59,21 @@ describe("/photos", () => {
       json: () =>
         Promise.resolve(
           mockedResolvedValue.filter((photo) =>
-            photo.captions.includes("Siapa yang Tahu???")
-          )
+            photo.captions.includes("Siapa yang Tahu???"),
+          ),
         ),
     });
     render(
       <MemoryRouter initialEntries={["/photos"]}>
         <App />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     const input = screen.getByTestId("search");
     fireEvent.change(input, { target: { value: "test" } });
     fireEvent.click(screen.getByTestId("submit"));
     await waitFor(() => screen.findByText("Siapa yang Tahu???"));
     const latestCallsArgUrlParams = new URL(
-      fetch.mock.calls[fetch.mock.calls.length - 1]
+      fetch.mock.calls[fetch.mock.calls.length - 1],
     ).searchParams;
     expect(latestCallsArgUrlParams.get("q")).toBe("test");
     const expectedCaptions = mockedResolvedValue
@@ -89,7 +89,7 @@ describe("/photos", () => {
     render(
       <MemoryRouter initialEntries={["/photos"]}>
         <App />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     await waitFor(() => screen.findByText("Siapa yang Tahu???"));
 
@@ -102,7 +102,7 @@ describe("/photos", () => {
       .filter((photo) => photo.id !== 10)
       .map((photo) => photo.captions);
     await waitForElementToBeRemoved(() =>
-      screen.queryByText("Banyak yang Tahu")
+      screen.queryByText("Banyak yang Tahu"),
     );
     checkCaption(expectedCaptions);
   });
@@ -116,7 +116,7 @@ describe("/add", () => {
     render(
       <MemoryRouter initialEntries={["/add"]}>
         <App />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     const input = screen.getByTestId("imageUrl");
     fireEvent.change(input, { target: { value: "test" } });
@@ -157,13 +157,13 @@ describe("/photos/:id", () => {
     global.fetch = jest.fn().mockResolvedValue({
       json: () =>
         Promise.resolve(
-          mockedResolvedValue.filter((photo) => photo.id === 5)[0]
+          mockedResolvedValue.filter((photo) => photo.id === 5)[0],
         ),
     });
     render(
       <MemoryRouter initialEntries={["/photos/5"]}>
         <App />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
     await waitFor(() => screen.findByText("Captions:"));
     expect(fetch).lastCalledWith("http://localhost:3001/photos/5");
@@ -179,7 +179,7 @@ describe("/photos/:id", () => {
     expect(lastCall[1].headers["Content-Type"]).toBe("application/json");
     const body = JSON.parse(lastCall[1].body);
     expect(body.imageUrl).toBe(
-      "https://imgx.sonora.id/crop/50x44:728x471/x/photo/2019/10/23/1633557869.jpg"
+      "https://imgx.sonora.id/crop/50x44:728x471/x/photo/2019/10/23/1633557869.jpg",
     );
     expect(body.captions).toBe("Bukan tahu biasa");
     expect(body.updatedAt).not.toBeUndefined();

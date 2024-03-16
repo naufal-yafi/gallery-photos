@@ -1,16 +1,18 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import EditPhoto from "./routes/EditPhoto";
-import Home from "./routes/Home";
-import Photos from "./routes/Photos";
-import AddPhoto from "./routes/AddPhoto";
-import NotFound from "./routes/NotFound";
-import Navbar from "./routes/Navbar";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/navbar";
+import NotFound from "./routes/not-found";
+import AddPhoto from "./routes/forms/add-photo";
+import EditPhoto from "./routes/forms/edit-photo";
+import Home from "./routes/home";
+import Photos from "./routes/photos";
+import "./style/app.css";
 
 const App = () => {
   return (
-    <>
+    <React.Fragment>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/photos">
@@ -20,7 +22,7 @@ const App = () => {
         <Route path="/add" element={<AddPhoto />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </React.Fragment>
   );
 };
 
