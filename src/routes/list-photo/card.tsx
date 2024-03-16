@@ -1,11 +1,12 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = ({ photo, deletePhoto }) => {
   return (
     <div className="gridd ">
-      <div className="w-3/5 p-3 mx-10 my-3 bg-white border border-gray-200 rounded-lg shadow-md  dark:border-gray-700 lg:w-full lg:mx-0">
+      <div className="w-3/5 p-3 mx-10 my-3 bg-white border border-gray-200 rounded-lg shadow-md dark:border-gray-700 lg:w-full lg:mx-0">
         <img
-          className="object-cover  w-90"
+          className="object-cover w-90"
           src={photo.imageUrl}
           alt={photo.id}
         />

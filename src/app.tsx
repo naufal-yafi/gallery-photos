@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar";
-import AddPhoto from "./routes/forms/add/add-photo";
-import EditPhoto from "./routes/forms/update/edit-photo";
-import Home from "./routes/home";
-import Photos from "./routes/list-photo/photos";
-import NotFound from "./routes/not-found";
+import Navbar from "./components/navbar.tsx";
+import AddPhoto from "./routes/forms/add/add-photo.tsx";
+import EditPhoto from "./routes/forms/update/edit-photo.tsx";
+import Home from "./routes/home.tsx";
+import Photos from "./routes/list-photo/photos.tsx";
+import NotFound from "./routes/not-found.tsx";
 import "./style/app.css";
 
 const App = () => {

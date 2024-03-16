@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import Card from "./card";
+import React, { useEffect, useState } from "react";
+import Card from "./card.tsx";
 
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
