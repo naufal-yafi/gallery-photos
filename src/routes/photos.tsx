@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "./card.tsx";
+import Card from "./list-photo/card.tsx";
 
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
@@ -67,7 +67,7 @@ const Photos = () => {
     );
 
   return (
-    <div className="containerr">
+    <section id="list-photo" className="containerr">
       <div className="flex justify-center lg:mr-0 lg:justify-between ">
         <select
           onChange={(e) => setSort(e.target.value)}
@@ -116,6 +116,7 @@ const Photos = () => {
           </button>
         </form>
       </div>
+
       <div className="content">
         {loading ? (
           <h1 style={{ width: "100%", textAlign: "center", marginTop: "20px" }}>
@@ -129,7 +130,7 @@ const Photos = () => {
           })
         )}
       </div>
-    </div>
+    </section>
   );
 };
 
