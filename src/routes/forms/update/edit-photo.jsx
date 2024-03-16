@@ -60,25 +60,35 @@ const EditPhoto = () => {
       ) : (
         <div className="containerr">
           <form className="edit-form" onSubmit={editPhoto}>
-            <label className="block mb-2 text-sm font-medium dark:text-white">
+            <label
+              htmlFor="imageUrl"
+              className="block mb-2 text-sm font-medium dark:text-white"
+            >
               Image Url:
-              <input
-                className=" w-full mt-5 border-2 border-bg-[#dbdbdb] h-8 rounded-sm mr-2 bg-white lg:w-full"
-                type="text"
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-              />
             </label>
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <input
+              id="imageUrl"
+              className=" w-full mt-5 border-2 border-bg-[#dbdbdb] h-8 rounded-sm mr-2 bg-white lg:w-full"
+              type="text"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+            />
+
+            <label
+              htmlFor="captions"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
               Captions:
-              <input
-                className="w-full mt-5 border-2 border-bg-[#dbdbdb] h-8 rounded-sm mr-2 bg-white"
-                type="text"
-                value={captions}
-                data-testid="captions"
-                onChange={(e) => setCaptions(e.target.value)}
-              />
             </label>
+            <input
+              className="w-full mt-5 border-2 border-bg-[#dbdbdb] h-8 rounded-sm mr-2 bg-white"
+              type="text"
+              id="captions"
+              value={captions}
+              data-testid="captions"
+              onChange={(e) => setCaptions(e.target.value)}
+            />
+
             <input
               className="text-white w-3/5 mx-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 lg:w-full lg:mx-auto"
               type="submit"
