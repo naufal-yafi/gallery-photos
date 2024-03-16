@@ -11,7 +11,7 @@
 
 ## Description
 
-[![Gambar Project](./public/Image/content/preview.PNG)](https://drive.google.com/file/d/1vUfVdAJsMg3oZWPwC6QbW5rjqZrobAw2/view?usp=sharing)
+[![Gambar Project](./public/assets/preview.PNG)](https://drive.google.com/file/d/1vUfVdAJsMg3oZWPwC6QbW5rjqZrobAw2/view?usp=sharing)
 
 Untuk final project kali ini, terdapat sisi _client_ dan _server_. Pada sisi server berada pada folder `server` dan kalian hanya diminta untuk menjalankannya dengan perintah `npm run start:server`. Sedangkan untuk sisi _client_ kalian diminta untuk membuat **CRUD** dengan ketentuan dibawah ini.
 

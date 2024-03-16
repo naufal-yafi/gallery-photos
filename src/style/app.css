@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.containerr {
+  margin: 0px auto;
+  width: 480px;
+  padding: 10px;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.edit-input,
+.add-input {
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #dbdbdb;
+  height: 40px;
+  border-radius: 6px;
+  margin-right: 4px;
+  background-color: #fff;
+}
+
+.submit-btn {
+  width: 100%;
+  color: #fff;
+  font-size: medium;
+  border: 1px solid #dbdbdb;
+  height: 40px;
+  border-radius: 6px;
+  background-color: #5eb9f6;
+}
+
+.error-msg {
+  width: 85%;
+  padding: 20px;
+  text-align: center;
+  background-color: #ff3140;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
