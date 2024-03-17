@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AddPhoto = () => {
@@ -32,7 +32,7 @@ const AddPhoto = () => {
   };
 
   return (
-    <div className="containerr ">
+    <section id="add" className="containerr ">
       {error && <div className="error-msg ">{error}</div>}
       <form className="justify-center my-8" onSubmit={addPhoto}>
         <label
@@ -87,7 +87,7 @@ const AddPhoto = () => {
           data-testid="submit"
         />
       </form>
-    </div>
+    </section>
   );
 };
 

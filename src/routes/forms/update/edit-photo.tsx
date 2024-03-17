@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditPhoto = () => {
@@ -58,7 +58,7 @@ const EditPhoto = () => {
           Loading...
         </h1>
       ) : (
-        <div className="containerr">
+        <section id="edit" className="containerr">
           <form className="edit-form" onSubmit={editPhoto}>
             <label
               htmlFor="imageUrl"
@@ -96,7 +96,7 @@ const EditPhoto = () => {
               data-testid="submit"
             />
           </form>
-        </div>
+        </section>
       )}
     </>
   );

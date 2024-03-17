@@ -2,45 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-.containerr {
-  margin: 0px auto;
-  width: 480px;
-  padding: 10px;
-}
+@layer components {
+  .containerr {
+    @apply w-[480px] my-0 mx-auto p-[10px];
+  }
 
-label {
-  font-size: 18px;
-  margin-bottom: 20px;
-  width: 100%;
-}
+  label {
+    @apply w-full text-lg mb-5 text-black;
+  }
 
-.edit-input,
-.add-input {
-  width: 100%;
-  margin-top: 10px;
-  border: 1px solid #dbdbdb;
-  height: 40px;
-  border-radius: 6px;
-  margin-right: 4px;
-  background-color: #fff;
-}
+  .edit-input,
+  .add-input {
+    @apply w-full h-10 mt-[10px] mr-1 rounded-md bg-white;
+  }
 
-.submit-btn {
-  width: 100%;
-  color: #fff;
-  font-size: medium;
-  border: 1px solid #dbdbdb;
-  height: 40px;
-  border-radius: 6px;
-  background-color: #5eb9f6;
-}
+  .submit-btn {
+    @apply w-full h-10 font-medium rounded-md text-white bg-[#5eb9f6];
+  }
 
-.error-msg {
-  width: 85%;
-  padding: 20px;
-  text-align: center;
-  background-color: #ff3140;
-  color: #fff;
-  margin-bottom: 10px;
-  font-weight: 600;
+  .error-msg {
+    @apply w-[85%] p-5 mb-[10px] text-center font-semibold text-white bg-[#ff3140];
+  }
 }
