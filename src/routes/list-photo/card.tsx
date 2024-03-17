@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PhotoType from "../../types/photo.type";
 
-const Card = ({ photo, deletePhoto }) => {
+const Card = ({ photo }: { photo: PhotoType }) => {
   return (
     <div className="w-3/5 p-3 mx-10 my-3 bg-white border border-gray-200 rounded-lg shadow-md dark:border-gray-700 lg:w-full lg:mx-0">
       <figure>
         <img
           className="object-cover w-90"
           src={photo.imageUrl}
-          alt={photo.id}
+          alt={photo.captions}
         />
 
         <figcaption className="p-2 bg-white">
@@ -22,7 +23,6 @@ const Card = ({ photo, deletePhoto }) => {
           <button
             data-testid="delete-btn"
             className="px-5 py-2 mb-2 mr-2 text-sm font-medium text-white bg-red-700 rounded-lg focus:outline-none hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-            onClick={() => deletePhoto(photo.id)}
           >
             Delete
           </button>

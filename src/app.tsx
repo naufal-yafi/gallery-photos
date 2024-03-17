@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Footer from "./components/footer.tsx";
 import Navbar from "./components/navbar.tsx";
 import AddPhoto from "./routes/forms/add/add-photo.tsx";
 import EditPhoto from "./routes/forms/update/edit-photo.tsx";
@@ -22,6 +23,8 @@ const App = () => {
         <Route path="/add" element={<AddPhoto />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      <Footer />
     </React.Fragment>
   );
 };
