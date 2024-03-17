@@ -13,17 +13,15 @@ const App = () => {
     <React.Fragment>
       <Navbar />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/photos">
-            <Route index element={<Photos />} />
-            <Route path=":id" element={<EditPhoto />} />
-          </Route>
-          <Route path="/add" element={<AddPhoto />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/photos">
+          <Route index element={<Photos />} />
+          <Route path=":id" element={<EditPhoto />} />
+        </Route>
+        <Route path="/add" element={<AddPhoto />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </React.Fragment>
   );
 };
