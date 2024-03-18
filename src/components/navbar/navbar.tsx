@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({
+  home,
+  album,
+}: Readonly<{
+  home?: boolean;
+  album?: boolean;
+}>) {
   return (
     <header className="fixed top-0 left-0 justify-between w-full px-6 bg-white flex__center md:px-32 h-14">
       <nav className="gap-2 flex__center">
@@ -17,12 +23,16 @@ export default function Navbar() {
         <ul className="flex__center">
           <li>
             <Link to="/">
-              <button className="btn active">Home</button>
+              <button className={`btn ${home ? "active" : "deactive"}`}>
+                Home
+              </button>
             </Link>
           </li>
           <li>
             <Link to="/album">
-              <button className="btn deactive">Album</button>
+              <button className={`btn ${album ? "active" : "deactive"}`}>
+                Album
+              </button>
             </Link>
           </li>
         </ul>

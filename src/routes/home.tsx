@@ -1,37 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/navbar/navbar.tsx";
 
 const Home = () => {
   return (
-    <main id="home">
-      <section className="flex flex-wrap px-5 my-16">
-        <aside className="self-center w-full px-5 lg:w-1/2">
-          <h1
-            className="text-4xl text-[#213644]
-        font-bold lg:text-6xl md:text-5xl"
-          >
-            Gallery Photos
-          </h1>
-          <p className="mb-5 text-xs font-normal leading-relaxed text-gray-400 md:text-base lg:text-xl lg:mt-3 ">
-            App for all photos that are arranged automatically
-          </p>
-          <Link
-            to="/add"
-            className="text-base font-semibold text-white bg-[#C6AB7C] py-2 px-6 rounded-full hover:shadow-lg hover:opacity-80 transition duration-150"
-          >
-            Get Started
-          </Link>
-        </aside>
+    <React.Fragment>
+      <Navbar home />
 
-        <figure className="self-end w-full px-5 my-3 lg:w-1/2 mt-9">
+      <main id="home" className="pt-7 md:pt-12 mt-14 container__padding">
+        <section>
+          <h1 className="text-4xl font-bold md:text-7xl">
+            Share pictures that you think others should see.
+          </h1>
+          <p className="mt-2">
+            Share images that make others happy by observing the applicable
+            rules and policies.
+          </p>
+
+          <Link to="/album">
+            <button className="w-full py-4 mt-5 text-white bg-red-600 btn">
+              See all photo now
+            </button>
+          </Link>
+
           <img
-            src="../assets/header.svg "
-            className="max-w-full mx-auto"
-            alt="foto Citra"
+            src="/assets/thumbnail.png"
+            alt="thumbnail"
+            className="w-full mt-5 rounded-2xl md:mt-10 md:ounded-3xl"
           />
-        </figure>
-      </section>
-    </main>
+        </section>
+      </main>
+    </React.Fragment>
   );
 };
 
