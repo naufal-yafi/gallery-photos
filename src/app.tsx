@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer.tsx";
-import Navbar from "./components/navbar.tsx";
+import Navbar from "./components/navbar/navbar.tsx";
+import Photos from "./routes/album/photos.tsx";
 import AddPhoto from "./routes/forms/add/add-photo.tsx";
 import EditPhoto from "./routes/forms/update/edit-photo.tsx";
 import Home from "./routes/home.tsx";
 import NotFound from "./routes/not-found.tsx";
-import Photos from "./routes/photos.tsx";
 import "./style/app.css";
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/photos">
+        <Route path="/album">
           <Route index element={<Photos />} />
           <Route path=":id" element={<EditPhoto />} />
         </Route>

@@ -1,5 +1,5 @@
 import React from "react";
-import ListPhoto from "./list-photo/list-photo.tsx";
+import ListPhoto from "../list-photo/list-photo.tsx";
 
 const Photos = () => {
   return (
