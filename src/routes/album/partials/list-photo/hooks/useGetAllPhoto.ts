@@ -1,6 +1,6 @@
 import React from "react";
-import { getAllPhoto } from "../services/photo-service.ts";
-import PhotoType from "../types/photo.type.ts";
+import PhotoType from "../../../../../types/photo.type.ts";
+import getAllPhoto from "../service/getPhotoService.ts";
 
 const useGetAllPhoto = () => {
   const [snapshot, setSnapshot] = React.useState<PhotoType[]>([]);

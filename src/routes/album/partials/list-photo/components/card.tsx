@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PhotoType from "../../types/photo.type";
+import PhotoType from "../../../../../types/photo.type.ts";
 
 const Card = ({ photo }: { photo: PhotoType }) => {
   return (
