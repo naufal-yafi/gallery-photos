@@ -9,10 +9,12 @@ const CheckDataEmpty = ({ photos }: { photos: PhotoType[] }) => {
       {photos?.length === 0 ? (
         <h1>Empty data...</h1>
       ) : (
-        <EachRender
-          of={photos}
-          render={(photo: PhotoType) => <Card key={photo.id} photo={photo} />}
-        />
+        <div className="columns-4">
+          <EachRender
+            of={photos}
+            render={(photo: PhotoType) => <Card key={photo.id} photo={photo} />}
+          />
+        </div>
       )}
     </>
   );

@@ -7,8 +7,12 @@ const ListPhoto = () => {
   const { photos, photoIsLoading } = useGetAllPhoto();
 
   return (
-    <section>
-      {photoIsLoading ? <LoadingPhotos /> : <CheckDataEmpty photos={photos} />}
+    <section className="pt-8">
+      {photoIsLoading ? (
+        <LoadingPhotos />
+      ) : (
+        <CheckDataEmpty photos={photos}></CheckDataEmpty>
+      )}
     </section>
   );
 };
