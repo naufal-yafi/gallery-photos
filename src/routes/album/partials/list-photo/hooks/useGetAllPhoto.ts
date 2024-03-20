@@ -2,13 +2,23 @@ import React from "react";
 import PhotoType from "../../../../../types/photo.type.ts";
 import getAllPhoto from "../service/getPhotoService.ts";
 
-const useGetAllPhoto = () => {
+const useGetAllPhoto = (): {
+  photos: PhotoType[];
+  photoIsLoading: boolean;
+  handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  searchType: string;
+} => {
   const [snapshot, setSnapshot] = React.useState<PhotoType[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
+  const [searchType, setSearchType] = React.useState<string>("");
 
-  const serviceGet = async (): Promise<void> => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchType(e.target.value);
+  };
+
+  const serviceGet = async (type: string): Promise<void> => {
     try {
-      setSnapshot(await getAllPhoto());
+      setSnapshot(await getAllPhoto(type));
     } catch (error) {
       throw new Error((error as Error).message);
     } finally {
@@ -17,12 +27,14 @@ const useGetAllPhoto = () => {
   };
 
   React.useEffect(() => {
-    serviceGet();
-  }, []);
+    serviceGet(searchType);
+  }, [searchType]);
 
   return {
     photos: snapshot,
     photoIsLoading: loading,
+    handleInput,
+    searchType,
   };
 };
 

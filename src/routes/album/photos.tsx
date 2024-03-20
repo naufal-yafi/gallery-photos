@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../../components/navbar/navbar.tsx";
-import SearchBar from "../../components/search-bar/search-bar.tsx";
 import ListPhoto from "./partials/list-photo/list-photo.tsx";
 
 const Photos = () => {
@@ -8,8 +7,7 @@ const Photos = () => {
     <React.Fragment>
       <Navbar album />
 
-      <main id="list-photo" className="pt-8 mt-14 container__padding">
-        <SearchBar />
+      <main id="list-photo" className="mt-14 container__padding">
         <ListPhoto />
       </main>
     </React.Fragment>
