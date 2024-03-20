@@ -27,7 +27,7 @@ export default function Navbar({
 
         <nav
           className={`absolute right-0 flex flex-col w-full px-6 py-4 bg-white md:translate-y-0 md:px-6 top-14 md:top-0 md:relative md:flex-row transition duration-500 ${
-            show ? "-translate-y-[1000%]" : "translate-y-0"
+            show ? "translate-y-0" : "-translate-y-[1000%]"
           }`}
         >
           <div className="justify-between w-full gap-2 flex__center">
