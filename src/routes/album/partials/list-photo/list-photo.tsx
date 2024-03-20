@@ -16,7 +16,7 @@ const ListPhoto = () => {
             id="search-bar"
             className="justify-end gap-2 mb-8 flex__center"
           >
-            <div className="bg-[#E4E4E7] rounded-full flex__center justify-between px-6 py-2 text-sm gap-1 w-1/2">
+            <div className="bg-[#E4E4E7] rounded-full flex__center justify-between px-6 py-2 text-sm gap-1 w-full md:w-1/2">
               <input
                 type="text"
                 placeholder="Search..."
