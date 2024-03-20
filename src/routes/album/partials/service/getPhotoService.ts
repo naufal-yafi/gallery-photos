@@ -1,5 +1,5 @@
 import axios from "axios";
-import PhotoType from "../../../../../types/photo.type";
+import PhotoType from "../../../../types/photo.type";
 
 const getAllPhoto = async (type: string): Promise<PhotoType[]> => {
   try {

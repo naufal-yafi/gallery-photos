@@ -1,5 +1,5 @@
 import React from "react";
-import PhotoType from "../../../../../types/photo.type.ts";
+import PhotoType from "../../../../types/photo.type.ts";
 import getAllPhoto from "../service/getPhotoService.ts";
 
 const useGetAllPhoto = (): {

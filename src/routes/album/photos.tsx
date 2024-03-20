@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../../components/navbar/navbar.tsx";
-import ListPhoto from "./partials/list-photo/list-photo.tsx";
+import ListPhoto from "./partials/list-photo.tsx";
 
 const Photos = () => {
   return (

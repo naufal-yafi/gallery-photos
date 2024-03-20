@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer.tsx";
+import DetailAlbum from "./routes/album/detail-album/detail-album.tsx";
 import Photos from "./routes/album/photos.tsx";
 import Login from "./routes/auth/login/login.tsx";
 import AddPhoto from "./routes/forms/add/add-photo.tsx";
-import EditPhoto from "./routes/forms/update/edit-photo.tsx";
 import Home from "./routes/home.tsx";
 import NotFound from "./routes/not-found.tsx";
 import "./style/app.css";
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/album">
           <Route index element={<Photos />} />
-          <Route path=":id" element={<EditPhoto />} />
+          <Route path=":slug" element={<DetailAlbum />} />
         </Route>
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/logout" element={<AddPhoto />} />

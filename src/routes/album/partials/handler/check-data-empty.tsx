@@ -1,6 +1,6 @@
 import React from "react";
-import EachRender from "../../../../../components/each-render.tsx";
-import PhotoType from "../../../../../types/photo.type.ts";
+import EachRender from "../../../../components/each-render.tsx";
+import PhotoType from "../../../../types/photo.type.ts";
 import Card from "../components/card.tsx";
 
 const CheckDataEmpty = ({ photos }: { photos: PhotoType[] }) => {
