@@ -10,27 +10,21 @@ const useGetPhotoBySlug = (
 } => {
   const [snapshot, setSnapshot] = React.useState<PhotoType>();
   const [loading, setLoading] = React.useState<boolean>(true);
-  const [redirect, setRedirect] = React.useState<boolean>(true);
-
-  const serviceGet = async () => {
-    try {
-      const photos = await getPhotoBySlug(slug);
-
-      if (photos.length === 0) {
-        setRedirect(true);
-      } else {
-        setSnapshot(photos[0]);
-      }
-    } catch (error) {
-      throw new Error((error as Error).message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   React.useEffect(() => {
+    const serviceGet = async () => {
+      try {
+        const photos = await getPhotoBySlug(slug);
+        setSnapshot(photos[0]);
+      } catch (error) {
+        throw new Error((error as Error).message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     serviceGet();
-  }, []);
+  }, [slug]);
 
   return {
     photo: snapshot,
