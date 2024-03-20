@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 export default function Navbar({
   home,
   album,
+  auth,
 }: Readonly<{
   home?: boolean;
   album?: boolean;
+  auth?: boolean;
 }>) {
   return (
     <header className="fixed top-0 left-0 justify-between w-full px-6 bg-white flex__center md:px-32 h-14">
@@ -38,11 +40,15 @@ export default function Navbar({
         </ul>
       </nav>
 
-      <div>
-        <Link to="/auth/login">
-          <button className="font-mono text-white bg-red-600 btn">Login</button>
-        </Link>
-      </div>
+      {auth ?? (
+        <div>
+          <Link to="/auth/login">
+            <button className="font-mono text-white bg-red-600 btn">
+              Login
+            </button>
+          </Link>
+        </div>
+      )}
     </header>
   );
 }

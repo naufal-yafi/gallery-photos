@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer.tsx";
 import Photos from "./routes/album/photos.tsx";
+import Login from "./routes/auth/login/login.tsx";
 import AddPhoto from "./routes/forms/add/add-photo.tsx";
 import EditPhoto from "./routes/forms/update/edit-photo.tsx";
 import Home from "./routes/home.tsx";
@@ -17,6 +18,8 @@ const App = () => {
           <Route index element={<Photos />} />
           <Route path=":id" element={<EditPhoto />} />
         </Route>
+        <Route path="/auth/login" element={<Login />} />
+        <Route path="/auth/logout" element={<AddPhoto />} />
         <Route path="/add" element={<AddPhoto />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
