@@ -1,9 +1,9 @@
 import React from "react";
-import PhotoType from "../../../../types/photo.type";
-import getPhotoBySlug from "../services/getPhotoBySlug.ts";
+import PhotoType from "../../../../types/photo.type.ts";
+import getPhotoById from "../services/getPhotoById.ts";
 
-const useGetPhotoBySlug = (
-  slug: string,
+const useGetPhotoById = (
+  id: string,
 ): {
   photo: PhotoType | undefined;
   photoIsLoading: boolean;
@@ -14,8 +14,8 @@ const useGetPhotoBySlug = (
   React.useEffect(() => {
     const serviceGet = async () => {
       try {
-        const photos = await getPhotoBySlug(slug);
-        setSnapshot(photos[0]);
+        const photo = await getPhotoById(id);
+        setSnapshot(photo);
       } catch (error) {
         throw new Error((error as Error).message);
       } finally {
@@ -24,7 +24,7 @@ const useGetPhotoBySlug = (
     };
 
     serviceGet();
-  }, [slug]);
+  }, [id]);
 
   return {
     photo: snapshot,
@@ -32,4 +32,4 @@ const useGetPhotoBySlug = (
   };
 };
 
-export default useGetPhotoBySlug;
+export default useGetPhotoById;

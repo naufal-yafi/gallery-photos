@@ -13,7 +13,7 @@ export default function DetailCard({ photo }: Readonly<{ photo: PhotoType }>) {
         />
       </figure>
 
-      <figcaption>
+      <figcaption className="mt-4 md:mt-0">
         <h1>{photo?.captions}</h1>
         <p className="mt-2 text-xs opacity-80">
           {photo?.createdAt !== photo?.updatedAt

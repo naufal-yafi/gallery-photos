@@ -5,7 +5,7 @@ import PhotoType from "../../../../types/photo.type.ts";
 const Card = ({ photo }: { photo: PhotoType }) => {
   return (
     <figure>
-      <Link to={`/album/${photo.captions}`}>
+      <Link to={`/album/${photo.id}?q=${photo.id}&d=${photo.createdAt}`}>
         <img
           className="object-cover rounded-3xl w-90"
           src={photo.imageUrl}
