@@ -87,7 +87,7 @@ const Footer = () => {
               </li>
               <li className="list__item">
                 <Link
-                  to="https://github.com/naufal-yafi/gallery-photos"
+                  to="https://github.com/naufal-yafi/gallery-photos/tree/dev"
                   target="_blank"
                 >
                   <button>Github Repository</button>

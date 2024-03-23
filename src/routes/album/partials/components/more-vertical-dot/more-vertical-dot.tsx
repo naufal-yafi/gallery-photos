@@ -28,7 +28,7 @@ export default function MoreVerticalDot({
         }`}
       >
         <li>
-          <Link to={`/admin/edit/${id}?q=${id}&d=${date}`}>
+          <Link to={`/admin/update/${id}?q=${id}&d=${date}`}>
             <button className="w-24 py-2 pl-2 text-sm rounded-md text-start hover:bg-black/10">
               Edit
             </button>
