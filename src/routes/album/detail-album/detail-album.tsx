@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../../../components/navbar/navbar.tsx";
+import useGetPhotoById from "../../../hooks/useGetPhotoById.ts";
 import DetailCard from "./components/detail-card.tsx";
-import useGetPhotoById from "./hooks/useGetPhotoById.ts";
 
 export default function DetailAlbum() {
   const params = useParams();

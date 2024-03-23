@@ -1,6 +1,6 @@
 import React from "react";
-import PhotoType from "../../../../types/photo.type.ts";
-import getAllPhoto from "../service/getPhotoService.ts";
+import { getAllPhoto } from "../services/photo-service.ts";
+import PhotoType from "../types/photo.type.ts";
 
 const useGetAllPhoto = (): {
   photos: PhotoType[];

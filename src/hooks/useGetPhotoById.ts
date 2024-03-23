@@ -1,6 +1,6 @@
 import React from "react";
-import PhotoType from "../../../../types/photo.type.ts";
-import getPhotoById from "../services/getPhotoById.ts";
+import { getPhotoById } from "../services/photo-service.ts";
+import PhotoType from "../types/photo.type.ts";
 
 const useGetPhotoById = (
   id: string,
