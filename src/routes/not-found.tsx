@@ -5,7 +5,7 @@ import Navbar from "../components/navbar/navbar.tsx";
 const NotFound = () => {
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar title="Page Not Found" />
 
       <main className="flex-col h-screen mt-14 flex__center container__padding">
         <h2 className="font-bold text-red-500">404 Not Found!</h2>

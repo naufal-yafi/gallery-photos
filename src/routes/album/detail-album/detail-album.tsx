@@ -2,12 +2,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../../../components/navbar/navbar.tsx";
 import DetailCard from "./components/detail-card.tsx";
-import useGetPhotoBySlug from "./hooks/useGetPhotoBySlug.ts";
+import useGetPhotoById from "./hooks/useGetPhotoById.ts";
 
 export default function DetailAlbum() {
   const params = useParams();
-  const getSlug: string = params.slug ?? "";
-  const { photo, photoIsLoading } = useGetPhotoBySlug(getSlug);
+  const getId: string = params.id ?? "";
+  const { photo, photoIsLoading } = useGetPhotoById(getId);
   const empty = {
     captions: "",
     imageUrl: "",
@@ -20,7 +20,8 @@ export default function DetailAlbum() {
 
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar title={`${photo?.captions} | Gallery Photo`} />
+
       <main className="mt-14">
         {photoIsLoading ? (
           <h1 className="pt-20 text-center pb-14">Loading...</h1>

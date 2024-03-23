@@ -1,10 +1,10 @@
 import axios from "axios";
 import PhotoType from "../../../../types/photo.type.ts";
 
-const getPhotoBySlug = async (slug: string): Promise<PhotoType[]> => {
+const getPhotoBySlug = async (id: string): Promise<PhotoType> => {
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_API_BASEURL}/photos?q=${slug}`,
+      `${process.env.REACT_APP_API_BASEURL}/photos/${Number(id)}`,
     );
     return res.data;
   } catch (err) {

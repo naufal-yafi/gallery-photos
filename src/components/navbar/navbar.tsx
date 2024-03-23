@@ -1,20 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TabTitle from "../tab-title.tsx";
 import useShowNavbar from "./hooks/useShowNavbar.ts";
 
 export default function Navbar({
   home,
   album,
   auth,
+  title,
 }: Readonly<{
   home?: boolean;
   album?: boolean;
   auth?: boolean;
+  title?: string;
 }>) {
   const { show, handleShow } = useShowNavbar();
 
   return (
     <React.Fragment>
+      <TabTitle title={title} />
+
       <header className="fixed top-0 left-0 z-0 justify-between w-full px-6 bg-white flex__center md:px-32 h-14">
         <Link to="/">
           <img
