@@ -20,7 +20,8 @@ export default function DetailAlbum() {
 
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar title={`${photo?.captions} | Gallery Photo`} />
+
       <main className="mt-14">
         {photoIsLoading ? (
           <h1 className="pt-20 text-center pb-14">Loading...</h1>

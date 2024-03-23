@@ -4,7 +4,7 @@ import Navbar from "../../../components/navbar/navbar.tsx";
 export default function Delete() {
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar title="Delete albums that have been created | Gallery Album" />
 
       <main></main>
     </React.Fragment>

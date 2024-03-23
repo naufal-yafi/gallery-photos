@@ -4,7 +4,7 @@ import Navbar from "../../../components/navbar/navbar.tsx";
 export default function Update() {
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar title="Change album | Gallery Photo" />
 
       <main></main>
     </React.Fragment>
