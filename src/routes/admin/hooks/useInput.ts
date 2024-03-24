@@ -2,6 +2,7 @@ import React from "react";
 
 const useInput = (): {
   type: string;
+  setType: React.Dispatch<React.SetStateAction<string>>;
   handleType: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
@@ -16,6 +17,7 @@ const useInput = (): {
 
   return {
     type,
+    setType,
     handleType,
   };
 };
